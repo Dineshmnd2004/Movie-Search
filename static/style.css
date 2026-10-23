@@ -1,0 +1,272 @@
+:root {
+    color-scheme: dark;
+    --bg: #10121b;
+    --surface: #1a1d29;
+    --text: #f5f5fa;
+    --muted: #a6a9ba;
+    --accent: #9b87ff;
+    --border: #303344;
+}
+
+body.light {
+    color-scheme: light;
+    --bg: #f5f6fb;
+    --surface: #ffffff;
+    --text: #202235;
+    --muted: #656a7d;
+    --accent: #6750d9;
+    --border: #e0e2ec;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    transition: background 0.2s, color 0.2s;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 7%;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo span,
+.hero h1 span {
+    color: var(--accent);
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.secondary-btn,
+.icon-btn {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+.hero {
+    padding: 65px 0 45px;
+    text-align: center;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin: 14px 0;
+    font-size: clamp(32px, 5vw, 54px);
+}
+
+.subtitle,
+.section-heading p,
+footer {
+    color: var(--muted);
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    width: min(620px, 100%);
+    margin: 28px auto 0;
+}
+
+.search-form input {
+    min-width: 0;
+    flex: 1;
+    padding: 15px;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.search-form button {
+    padding: 0 22px;
+    background: var(--accent);
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.section-heading h2 {
+    margin: 0;
+}
+
+.status {
+    color: var(--muted);
+    text-align: center;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    gap: 22px;
+    padding-bottom: 50px;
+}
+
+.movie-card {
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: transform 0.2s;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+}
+
+.poster {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background: var(--border);
+    cursor: pointer;
+}
+
+.movie-info {
+    padding: 12px;
+}
+
+.movie-info h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+}
+
+.movie-meta {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.card-actions button {
+    flex: 1;
+    padding: 8px 4px;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.card-actions button:hover {
+    border-color: var(--accent);
+}
+
+.movie-dialog {
+    position: relative;
+    width: min(650px, 92%);
+    max-height: 85vh;
+    overflow: auto;
+    padding: 25px;
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.movie-dialog::backdrop {
+    background: rgb(0 0 0 / 75%);
+}
+
+.close-btn {
+    float: right;
+    padding: 8px 12px;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.detail-poster {
+    width: 130px;
+    float: left;
+    margin: 0 20px 12px 0;
+    border-radius: 10px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+}
+
+@media (max-width: 500px) {
+    .topbar {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .secondary-btn,
+    .icon-btn {
+        padding: 9px;
+    }
+
+    .hero {
+        padding-top: 40px;
+    }
+
+    .search-form button {
+        padding: 0 14px;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+}

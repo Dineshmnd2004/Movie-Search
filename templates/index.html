@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineScope - Movie Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+
+<body>
+    <header class="topbar">
+        <a class="logo" href="/">CineScope<span>.</span></a>
+        <div class="header-actions">
+            <button id="favouritesBtn" class="secondary-btn">♥ Favourites</button>
+            <button id="themeBtn" class="icon-btn" aria-label="Switch theme">☀️</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <p class="eyebrow">YOUR NEXT MOVIE NIGHT</p>
+            <h1>Find a movie <span>worth watching.</span></h1>
+            <p class="subtitle">Explore movies, discover stories and save your favourites.</p>
+
+            <form id="searchForm" class="search-form">
+                <input id="searchInput" type="search" placeholder="Search movie titles..." autocomplete="off">
+                <button type="submit">Search</button>
+            </form>
+        </section>
+
+        <div class="section-heading">
+            <h2 id="sectionTitle">Popular Movies</h2>
+            <p id="resultCount"></p>
+        </div>
+
+        <p id="statusMessage" class="status" role="status">Loading movies...</p>
+        <section id="movieGrid" class="movie-grid"></section>
+    </main>
+
+    <dialog id="movieDialog" class="movie-dialog">
+        <button id="closeDialog" class="close-btn" aria-label="Close">✕</button>
+        <div id="movieDetails"></div>
+    </dialog>
+
+    <footer>
+        <p>Movie data provided by TMDB. This project is not endorsed or certified by TMDB.</p>
+    </footer>
+</body>
+
+</html>
